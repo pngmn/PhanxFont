@@ -1,4 +1,4 @@
---[[--------------------------------------------------------------------
+﻿--[[--------------------------------------------------------------------
 	PhanxFont
 	Simple font replacement and scaling.
 	Based on tekticles by Tekkub, which is based on ClearFont2 by Kirkburn.
@@ -105,7 +105,7 @@ Options:SetScript("OnShow", function(self)
 	SampleText:SetPoint("TOPRIGHT", BoldFont, "BOTTOMRIGHT", 0, -16)
 	SampleText:SetPoint("BOTTOMLEFT", ReloadButton, "TOPLEFT", 0, 16)
 	SampleText:SetJustifyH("LEFT")
-	SampleText:SetText("The quick brown fox jumps over the lazy dog.\n\nÁá Ää Éé Íí Ññ Óó Öö ß Úú Üü\n¡! ¿? # $ € % & ° – —\n“q” ‘q’ „q“ ‚q‘ «q» ‹q›\n^ ● ")
+	SampleText:SetText("The quick brown fox jumps over the lazy dog.\n\nÁá Ää Éé Íí Ññ Óó Öö ß Úú Üü\n¡! ¿? # $ € % & ° – —\n“q” ‘q’ „q“ ‚q‘ «q» ‹q› ^ ● \n信 Б Д Ф Э")
 
 	----------
 
