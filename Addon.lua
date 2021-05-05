@@ -162,6 +162,9 @@ function Addon:SetFonts(event, addon)
 	if addon == "Blizzard_EncounterJournal" then
 		SetFont(EncounterJournalSuggestFrame.Suggestion1.centerDisplay.description.text, NORMAL, 15)
 	end
+
+	-- WorldMap Bounty board
+	SetFont(WorldMapFrame.overlayFrames[4].BountyName, NORMAL, 16, "OUTLINE", nil, nil, nil, 0, 0, 0, 1, -1)
 end
 
 ------------------------------------------------------------------------
