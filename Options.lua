@@ -21,13 +21,17 @@ local L = setmetatable({}, {
 if GetLocale() == "deDE" then
 	L["Normal Font"] = "Normalschrift"
 	L["Bold Font"] = "Fettschrift"
+	L["Damage Font"] = "Schadenszahlen"
 	L["Scale"] = "Größe"
+	L["Damage Scale"] = "Schadenszahlengröße"
 	L["Reload UI"] = "UI neu laden"
 	L["Apply"] = "Anwenden"
 elseif GetLocale():match("^es") then
 	L["Normal Font"] = "Fuente normal"
 	L["Bold Font"] = "Fuente en negrita"
+	L["Damage Font"] = "Cifras de daños"
 	L["Scale"] = "Tamaño"
+	L["Damage Scale"] = ""
 	L["Reload UI"] = "Recargar IU"
 	L["Apply"] = "Aplicar"
 end
@@ -86,6 +90,28 @@ Options:SetScript("OnShow", function(self)
 
 	----------
 
+	local DamageFont = LibStub("PhanxConfig-MediaDropdown"):New(self, L["Damage Font"], nil, "font")
+	DamageFont:SetPoint("TOPLEFT", Scale, "BOTTOMLEFT", 0, -16)
+	DamageFont:SetPoint("TOPRIGHT", Scale, "BOTTOMRIGHT", 0, -16)
+
+	function DamageFont:OnValueChanged(value)
+		PhanxFontDB.damage = value
+		UpdatePreviews()
+	end
+
+	----------
+
+	local DamageScale = LibStub("PhanxConfig-Slider"):New(self, L["Damage Scale"], nil, 0.5, 4, 0.05, true)
+	DamageScale:SetPoint("TOPLEFT", DamageFont, "BOTTOMLEFT", 0, -16)
+	DamageScale:SetPoint("TOPRIGHT", DamageFont, "BOTTOMRIGHT", 0, -16)
+
+	function DamageScale:OnValueChanged(value)
+		PhanxFontDB.damagescale = value
+		UpdatePreviews()
+	end
+
+	----------
+
 	local ReloadButton = CreateFrame("Button", "$parentReloadButton", self, "UIPanelButtonTemplate")
 	ReloadButton:SetPoint("BOTTOMLEFT", 16, 16)
 	ReloadButton:SetSize(96, 22)
@@ -101,8 +127,8 @@ Options:SetScript("OnShow", function(self)
 	----------
 
 	SampleText = self:CreateFontString(nil, "ARTWORK", "GameFontHighlight")
-	SampleText:SetPoint("TOPLEFT", BoldFont, "BOTTOMLEFT", 0, -16)
-	SampleText:SetPoint("TOPRIGHT", BoldFont, "BOTTOMRIGHT", 0, -16)
+	SampleText:SetPoint("TOPLEFT", DamageScale, "BOTTOMLEFT", 0, -16)
+	SampleText:SetPoint("TOPRIGHT", DamageScale, "BOTTOMRIGHT", 0, -16)
 	SampleText:SetPoint("BOTTOMLEFT", ReloadButton, "TOPLEFT", 0, 16)
 	SampleText:SetJustifyH("LEFT")
 	SampleText:SetText("The quick brown fox jumps over the lazy dog.\n\nÁá Ää Éé Íí Ññ Óó Öö ß Úú Üü\n¡! ¿? # $ € % & ° – —\n“q” ‘q’ „q“ ‚q‘ «q» ‹q› ^ ● \n信 Б Д Ф Э")
@@ -169,6 +195,7 @@ Options:SetScript("OnShow", function(self)
 		"GameTooltipText",
 		"GameTooltipTextSmall",
 		"GameTooltipHeaderText",
+		"CombatTextFont"
 	}
 	local bolds = {
 		GameFontNormalHuge = true,
@@ -183,6 +210,10 @@ Options:SetScript("OnShow", function(self)
 		QuestFont_Super_Huge = true,
 		TextStatusBarText = true,
 		GameTooltipHeaderText = true,
+	}
+
+	local combat = {
+		CombatTextFont = true
 	}
 
 	for i = 1, #fonts do
@@ -204,12 +235,13 @@ Options:SetScript("OnShow", function(self)
 		local Media = LibStub("LibSharedMedia-3.0")
 		local NORMAL = Media:Fetch("font", PhanxFontDB.normal)
 		local BOLD = Media:Fetch("font", PhanxFontDB.bold)
+		local DAMAGE = Media:Fetch("font", PhanxFontDB.damage)
 		SampleText:SetFont(NORMAL, 14 * PhanxFontDB.scale)
 
 		local height = 5
 		for i = 1, #fonts do
 			local fs = fonts[i]
-			local file = bolds[fs.font] and BOLD or NORMAL
+			local file = bolds[fs.font] and BOLD or combat[fs.font] and DAMAGE or NORMAL
 			local _, size, flag = fs:GetFont()
 			fs:SetFont(file, size, flag)
 			height = height + fs:GetHeight() + 5
@@ -220,7 +252,9 @@ Options:SetScript("OnShow", function(self)
 	function self:refresh()
 		NormalFont:SetValue(PhanxFontDB.normal)
 		BoldFont:SetValue(PhanxFontDB.bold)
+		DamageFont:SetValue(PhanxFontDB.damage)
 		Scale:SetValue(PhanxFontDB.scale)
+		DamageScale:SetValue(PhanxFontDB.damagescale)
 		UpdatePreviews(width)
 	end
 
