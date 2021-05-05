@@ -1,6 +1,5 @@
 This is a updated fork of [PhanxFont](https://github.com/phanx-wow/PhanxFont) by [Phanx](https://github.com/phanx-wow).
-
-
+============
 
 PhanxFont
 ============
