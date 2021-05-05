@@ -7,13 +7,7 @@
 ## Notes-esES: Sustitución de fuentes simple.
 ## Notes-esMX: Sustitución de fuentes simple.
 
-## Author: Phanx
-## X-Email: addons@phanx.net
-## X-License: zlib/libpng License
-## X-Website: https://github.com/phanx-wow/PhanxFont
-## X-Curse-Project-ID: 287705
-## X-WoWI-ID: 24565
-
+## Author: pngmn
 ## SavedVariables: PhanxFontDB
 
 Libs\LibStub\LibStub.lua
