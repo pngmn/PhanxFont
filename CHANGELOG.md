@@ -1,11 +1,11 @@
-### Changed in 9.1.0-1
+### Changed in 1.1.0
 - TOC update
 - Added fallback to default size
 
-### Changed in 9.0.5-2
+### Changed in 1.0.1
 - Fixed damage font not changing
 
-### Changed in 9.0.5-1
+### Changed in 1.0.0
 - First release of this fork
 - Updated for Shadowlands Patch 9.0.5
 - Fixed Shadowlands backdrop API changes
