@@ -6,10 +6,6 @@ externals:
   Libs/PhanxConfig-MediaDropdown: git://github.com/Phanx/PhanxConfig-MediaDropdown.git
   Libs/PhanxConfig-Slider: git://github.com/pngmn/PhanxConfig-Slider.git
 
-ignore:
-  - Assets
-  - *.md
-
 manual-changelog:
-  filename: CHANGELOG.md
+  filename: RECENT_CHANGES.md
   markup-type: markdown

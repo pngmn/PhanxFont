@@ -1,11 +1,14 @@
-### Changed in 1.1.0
-- TOC update
+PhanxFont | 1.1.0
+-----------------
+- TOC update for 9.1.0
 - Added fallback to default size
 
-### Changed in 1.0.1
+PhanxFont | 1.0.1
+-----------------
 - Fixed damage font not changing
 
-### Changed in 1.0.0
+PhanxFont | 1.0.0
+-----------------
 - First release of this fork
 - Updated for Shadowlands Patch 9.0.5
 - Fixed Shadowlands backdrop API changes
