@@ -1,3 +1,7 @@
+PhanxFont | 1.2.0
+-----------------
+- TOC update for 9.1.5
+
 PhanxFont | 1.1.0
 -----------------
 - TOC update for 9.1.0
