@@ -35,6 +35,9 @@ local NUMBER       = BOLD
 
 function Addon:SetFont(obj, font, size, style, r, g, b, sr, sg, sb, sox, soy)
 	if not obj then return end
+	if not size then
+		size = select(2, obj:GetFont())
+	end
 	obj:SetFont(font, floor(size * PhanxFontDB.scale + 0.5), style)
 	if sr and sg and sb then
 		obj:SetShadowColor(sr, sg, sb)

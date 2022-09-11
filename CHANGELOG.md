@@ -1,3 +1,7 @@
+### Changed in 9.1.0-1
+- TOC update
+- Added fallback to default size
+
 ### Changed in 9.0.5-2
 - Fixed damage font not changing
 
