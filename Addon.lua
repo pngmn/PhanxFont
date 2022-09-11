@@ -1,4 +1,4 @@
-﻿--[[--------------------------------------------------------------------
+--[[--------------------------------------------------------------------
 	PhanxFont
 	Simple font replacement and scaling.
 	Based on tekticles by Tekkub, which is based on ClearFont2 by Kirkburn.
@@ -155,11 +155,6 @@ f:SetScript("OnEvent", function(self, event, addon)
 
 	for _, button in pairs(PaperDollTitlesPane.buttons) do
 		button.text:SetFontObject(GameFontHighlightSmallLeft)
-	end
-
-	-- Fix help frame category buttons, NFI why they need fixing
-	for i = 1, 6 do
-		_G["HelpFrameButton"..i.."Text"]:SetFontObject(GameFontNormalMed3)
 	end
 
 	BattlePetTooltip.Name:SetFontObject(GameTooltipHeaderText)
