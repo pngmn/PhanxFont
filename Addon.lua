@@ -16,7 +16,7 @@ PhanxFontDB = {
 	bold   = "Lato Black",
 	damage = "Lato Black",
 	scale  = 1.3,
-	damagescale = 1.3,
+	damagescale = 2,
 }
 
 local NORMAL       = [[Interface\AddOns\PhanxMedia\font\Lato.ttf]]
@@ -54,7 +54,7 @@ function Addon:SetFonts(event, addon)
 
 	UNIT_NAME_FONT     = NORMAL
 	NAMEPLATE_FONT     = BOLD
-	DAMAGE_TEXT_FONT   = NUMBER
+	DAMAGE_TEXT_FONT   = DAMAGE
 	STANDARD_TEXT_FONT = NORMAL
 
 	-- Base fonts in Fonts.xml
