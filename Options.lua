@@ -122,7 +122,7 @@ Options:SetScript("OnShow", function(self)
 	ApplyButton:SetPoint("BOTTOMLEFT", ReloadButton, "BOTTOMRIGHT")
 	ApplyButton:SetSize(96, 22)
 	ApplyButton:SetText(L["Apply"])
-	ApplyButton:SetScript("OnClick", Addon.SetFonts)
+	ApplyButton:SetScript("OnClick", function() Addon:SetFonts() end)
 
 	----------
 
