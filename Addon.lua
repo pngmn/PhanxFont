@@ -74,12 +74,12 @@ function Addon:SetFonts(event, addon)
 	self:SetFont(FriendsFont_UserText,               NUMBER, 13, nil, nil, nil, nil, 0, 0, 0, 1, -1)
 	self:SetFont(Game15Font_o1,                      NORMAL, 15, "OUTLINE")
 	self:SetFont(Game18Font,                         NORMAL, 18)
-	self:SetFont(Game24Font,                         NORMAL, 24) -- there are two of these, good job Blizzard
+	self:SetFont(Game24Font,                         NORMAL, 24)
 	self:SetFont(Game27Font,                         NORMAL, 27)
 	self:SetFont(Game30Font,                         NORMAL, 30)
 	self:SetFont(Game32Font,                         NORMAL, 32)
 	self:SetFont(GameFont_Gigantic,                    BOLD, 32, nil, nil, nil, nil, 0, 0, 0, 1, -1)
-	self:SetFont(GameTooltipHeader,                    BOLD, 15, "OUTLINE") -- SharedFonts.xml
+	self:SetFont(GameTooltipHeader,                    BOLD, 15, "OUTLINE")
 	self:SetFont(InvoiceFont_Med,                    ITALIC, 13, nil, 0.15, 0.09, 0.04)
 	self:SetFont(InvoiceFont_Small,                  ITALIC, 11, nil, 0.15, 0.09, 0.04)
 	self:SetFont(MailFont_Large,                     ITALIC, 15, nil, 0.15, 0.09, 0.04, 0.54, 0.4, 0.1, 1, -1)
@@ -102,7 +102,7 @@ function Addon:SetFonts(event, addon)
 	self:SetFont(PriceFont,                          NUMBER, 14)
 	self:SetFont(QuestFont_Enormous,                   BOLD, 30)
 	self:SetFont(QuestFont_Huge,                       BOLD, 19)
-	self:SetFont(QuestFont_Large,                    NORMAL, 16) -- SharedFonts.xml
+	self:SetFont(QuestFont_Large,                    NORMAL, 16)
 	self:SetFont(QuestFont_Shadow_Huge,                BOLD, 19, nil, nil, nil, nil, 0.54, 0.4, 0.1)
 	self:SetFont(QuestFont_Shadow_Small,             NORMAL, 16)
 	self:SetFont(QuestFont_Super_Huge,                 BOLD, 24)
@@ -112,9 +112,10 @@ function Addon:SetFonts(event, addon)
 	self:SetFont(SplashHeaderFont,                     BOLD, 24)
 	self:SetFont(SystemFont_Huge1,                   NORMAL, 20)
 	self:SetFont(SystemFont_Huge1_Outline,           NORMAL, 20, "OUTLINE")
+	self:SetFont(SystemFont_Huge2,                   NORMAL, 20)
 	self:SetFont(SystemFont_InverseShadow_Small,       BOLD, 11)
 	self:SetFont(SystemFont_Large,                   NORMAL, 17)
-	self:SetFont(SystemFont_Med1,                    NORMAL, 13) -- SharedFonts.xml
+	self:SetFont(SystemFont_Med1,                    NORMAL, 13)
 	self:SetFont(SystemFont_Med2,                    ITALIC, 14, nil, 0.15, 0.09, 0.04)
 	self:SetFont(SystemFont_Med3,                    NORMAL, 15)
 	self:SetFont(SystemFont_Outline,                 NUMBER, 13, "OUTLINE")
@@ -122,24 +123,24 @@ function Addon:SetFonts(event, addon)
 	self:SetFont(SystemFont_OutlineThick_Huge2,      NORMAL, 22, "THICKOUTLINE")
 	self:SetFont(SystemFont_OutlineThick_Huge4,  BOLDITALIC, 27, "THICKOUTLINE")
 	self:SetFont(SystemFont_OutlineThick_WTF,    BOLDITALIC, 31, "THICKOUTLINE", nil, nil, nil, 0, 0, 0, 1, -1)
---	self:SetFont(SystemFont_OutlineThick_WTF2,   BOLDITALIC, 36) -- SharedFonts.xml
-	self:SetFont(SystemFont_Shadow_Huge1,              BOLD, 20) -- SharedFonts.xml
-	self:SetFont(SystemFont_Shadow_Huge2,              BOLD, 24) -- SharedFonts.xml
-	self:SetFont(SystemFont_Shadow_Huge3,              BOLD, 25) -- SharedFonts.xml
-	self:SetFont(SystemFont_Shadow_Large,            NORMAL, 17) -- SharedFonts.xml
-	self:SetFont(SystemFont_Shadow_Large2,           NORMAL, 19) -- SharedFonts.xml
-	self:SetFont(SystemFont_Shadow_Large_Outline,    NORMAL, 17, "OUTLINE") -- SharedFonts.xml
-	self:SetFont(SystemFont_Shadow_Med1,             NORMAL, 13) -- SharedFonts.xml
-	self:SetFont(SystemFont_Shadow_Med1_Outline,     NORMAL, 12, "OUTLINE") -- SharedFonts.xml
-	self:SetFont(SystemFont_Shadow_Med2,             NORMAL, 14) -- SharedFonts.xml
+--	self:SetFont(SystemFont_OutlineThick_WTF2,   BOLDITALIC, 36)
+	self:SetFont(SystemFont_Shadow_Huge1,              BOLD, 20)
+	self:SetFont(SystemFont_Shadow_Huge2,              BOLD, 24)
+	self:SetFont(SystemFont_Shadow_Huge3,              BOLD, 25)
+	self:SetFont(SystemFont_Shadow_Large,            NORMAL, 17)
+	self:SetFont(SystemFont_Shadow_Large2,           NORMAL, 19)
+	self:SetFont(SystemFont_Shadow_Large_Outline,    NORMAL, 17, "OUTLINE")
+	self:SetFont(SystemFont_Shadow_Med1,             NORMAL, 13)
+	self:SetFont(SystemFont_Shadow_Med1_Outline,     NORMAL, 13, "OUTLINE")
+	self:SetFont(SystemFont_Shadow_Med2,             NORMAL, 14)
 	self:SetFont(SystemFont_Shadow_Med3,             NORMAL, 15)
-	self:SetFont(SystemFont_Shadow_Outline_Huge2,    NORMAL, 22, "OUTLINE") -- SharedFonts.xml
-	self:SetFont(SystemFont_Shadow_Small,            NORMAL, 13) -- SharedFonts.xml
-	self:SetFont(SystemFont_Shadow_Small2,           NORMAL, 13) -- SharedFonts.xml
-	self:SetFont(SystemFont_Small,                   NORMAL, 12) -- SharedFonts.xml
-	self:SetFont(SystemFont_Small2,                  NORMAL, 12) -- SharedFonts.xml
-	self:SetFont(SystemFont_Tiny,                    NORMAL, 11) -- SharedFonts.xml
-	self:SetFont(SystemFont_Tiny2,                   NORMAL, 10) -- SharedFonts.xml
+	self:SetFont(SystemFont_Shadow_Outline_Huge2,    NORMAL, 22, "OUTLINE")
+	self:SetFont(SystemFont_Shadow_Small,            NORMAL, 13)
+	self:SetFont(SystemFont_Shadow_Small2,           NORMAL, 13)
+	self:SetFont(SystemFont_Small,                   NORMAL, 12)
+	self:SetFont(SystemFont_Small2,                  NORMAL, 12)
+	self:SetFont(SystemFont_Tiny,                    NORMAL, 11)
+	self:SetFont(SystemFont_Tiny2,                   NORMAL, 10)
 	self:SetFont(Tooltip_Med,                        NORMAL, 13)
 	self:SetFont(Tooltip_Small,                        BOLD, 12)
 
