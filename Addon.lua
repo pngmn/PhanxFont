@@ -1,4 +1,4 @@
---[[--------------------------------------------------------------------
+﻿--[[--------------------------------------------------------------------
 	PhanxFont
 	Simple font replacement and scaling.
 	Based on tekticles by Tekkub, which is based on ClearFont2 by Kirkburn.
@@ -61,8 +61,8 @@ function Addon:SetFonts(event, addon)
 	SetFont(DestinyFontLarge,                     BOLD, 18)
 	SetFont(FriendsFont_Large,                  NORMAL, 15, nil, nil, nil, nil, 0, 0, 0, 1, -1)
 	SetFont(FriendsFont_Normal,                 NORMAL, 13, nil, nil, nil, nil, 0, 0, 0, 1, -1)
-	SetFont(FriendsFont_Small,                  NORMAL, 11, nil, nil, nil, nil, 0, 0, 0, 1, -1)
-	SetFont(FriendsFont_UserText,               NUMBER, 12, nil, nil, nil, nil, 0, 0, 0, 1, -1)
+	SetFont(FriendsFont_Small,                  NORMAL, 13, nil, nil, nil, nil, 0, 0, 0, 1, -1)
+	SetFont(FriendsFont_UserText,               NUMBER, 13, nil, nil, nil, nil, 0, 0, 0, 1, -1)
 	SetFont(Game15Font_o1,                      NORMAL, 15, "OUTLINE")
 	SetFont(Game18Font,                         NORMAL, 18)
 	SetFont(Game24Font,                         NORMAL, 24) -- there are two of these, good job Blizzard
@@ -82,7 +82,15 @@ function Addon:SetFonts(event, addon)
 	SetFont(NumberFont_OutlineThick_Mono_Small, NUMBER, 13, "OUTLINE")
 	SetFont(NumberFont_Shadow_Med,              NORMAL, 14)
 	SetFont(NumberFont_Shadow_Small,            NORMAL, 12)
+	SetFont(NumberFont_Shadow_Tiny,             NORMAL, 11)
+	SetFont(NumberFont_Small,                   NORMAL, 12)
 	SetFont(NumberFont_GameNormal,              NORMAL, 13) -- orig 10 -- inherited by WhiteNormalNumberFont, tekticles = 11
+	SetFont(Number12Font,                       NUMBER, 13)
+	SetFont(Number13Font,                       NUMBER, 13)
+	SetFont(Number13FontWhite,                  NUMBER, 13)
+	SetFont(Number14FontWhite,                  NUMBER, 14)
+	SetFont(Number15FontWhite,                  NUMBER, 15)
+	SetFont(PriceFont,                          NUMBER, 14)
 	SetFont(QuestFont_Enormous,                   BOLD, 30)
 	SetFont(QuestFont_Huge,                       BOLD, 19)
 	SetFont(QuestFont_Large,                    NORMAL, 16) -- SharedFonts.xml
@@ -117,11 +125,12 @@ function Addon:SetFonts(event, addon)
 	SetFont(SystemFont_Shadow_Med2,             NORMAL, 14) -- SharedFonts.xml
 	SetFont(SystemFont_Shadow_Med3,             NORMAL, 15)
 	SetFont(SystemFont_Shadow_Outline_Huge2,    NORMAL, 22, "OUTLINE") -- SharedFonts.xml
-	SetFont(SystemFont_Shadow_Small,            NORMAL, 11) -- SharedFonts.xml
-	SetFont(SystemFont_Shadow_Small2,           NORMAL, 11) -- SharedFonts.xml
+	SetFont(SystemFont_Shadow_Small,            NORMAL, 13) -- SharedFonts.xml
+	SetFont(SystemFont_Shadow_Small2,           NORMAL, 13) -- SharedFonts.xml
 	SetFont(SystemFont_Small,                   NORMAL, 12) -- SharedFonts.xml
 	SetFont(SystemFont_Small2,                  NORMAL, 12) -- SharedFonts.xml
 	SetFont(SystemFont_Tiny,                    NORMAL, 11) -- SharedFonts.xml
+	SetFont(SystemFont_Tiny2,                   NORMAL, 10) -- SharedFonts.xml
 	SetFont(Tooltip_Med,                        NORMAL, 13)
 	SetFont(Tooltip_Small,                        BOLD, 12)
 
