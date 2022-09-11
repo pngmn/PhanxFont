@@ -1,4 +1,4 @@
-﻿--[[--------------------------------------------------------------------
+--[[--------------------------------------------------------------------
 	PhanxFont
 	Simple font replacement and scaling.
 	Based on tekticles by Tekkub, which is based on ClearFont2 by Kirkburn.
@@ -14,11 +14,14 @@ local ADDON, Addon = ...
 PhanxFontDB = {
 	normal = "Lato",
 	bold   = "Lato Black",
+	damage = "Lato Black",
 	scale  = 1.3,
+	damagescale = 1.3,
 }
 
 local NORMAL       = [[Interface\AddOns\PhanxMedia\font\Lato.ttf]]
 local BOLD         = [[Interface\AddOns\PhanxMedia\font\Lato-Black.otf]]
+local DAMAGE       = [[Interface\AddOns\PhanxMedia\font\Lato-Black.otf]]
 local BOLDITALIC   = BOLD
 local ITALIC       = NORMAL
 local NUMBER       = BOLD
@@ -44,6 +47,7 @@ end
 function Addon:SetFonts(event, addon)
 	NORMAL     = LibStub("LibSharedMedia-3.0"):Fetch("font", PhanxFontDB.normal)
 	BOLD       = LibStub("LibSharedMedia-3.0"):Fetch("font", PhanxFontDB.bold)
+	DAMAGE 	   = LibStub("LibSharedMedia-3.0"):Fetch("font", PhanxFontDB.damage)
 	BOLDITALIC = BOLD
 	ITALIC     = NORMAL
 	NUMBER     = BOLD
@@ -136,7 +140,7 @@ function Addon:SetFonts(event, addon)
 
 	-- Derived fonts in FontStyles.xml
 	SetFont(BossEmoteNormalHuge,  BOLDITALIC, 27, "THICKOUTLINE") -- inherits SystemFont_Shadow_Huge3
-	SetFont(CombatTextFont,           NORMAL, 26) -- inherits SystemFont_Shadow_Huge3
+	SetFont(CombatTextFont,           DAMAGE, 26) -- inherits SystemFont_Shadow_Huge3
 	SetFont(ErrorFont,                ITALIC, 16, nil, 60) -- inherits GameFontNormalLarge
 	SetFont(QuestFontNormalSmall,       BOLD, 13, nil, nil, nil, nil, 0.54, 0.4, 0.1) -- inherits GameFontBlack
 	SetFont(WorldMapTextFont,     BOLDITALIC, 31, "THICKOUTLINE", 40, nil, nil, 0, 0, 0, 1, -1) -- inherits SystemFont_OutlineThick_WTF
@@ -150,6 +154,10 @@ function Addon:SetFonts(event, addon)
 	-- Chat frames
 	local _, size = ChatFrame1:GetFont()
 	FCF_SetChatWindowFontSize(nil, ChatFrame1, size)
+
+	-- CombatTextFont scale
+	C_CVar.SetCVar("WorldTextScale", PhanxFontDB.damagescale)
+
 end
 
 ------------------------------------------------------------------------
