@@ -11,6 +11,9 @@
 
 local ADDON, Addon = ...
 
+Addon.Classic = WOW_PROJECT_ID == WOW_PROJECT_CLASSIC
+local SetCVar = C_CVar and C_CVar.SetCVar or SetCVar
+
 PhanxFontDB = {
 	normal = "Lato",
 	bold   = "Lato Black",
@@ -29,7 +32,7 @@ local NUMBER       = BOLD
 ------------------------------------------------------------------------
 
 local function SetFont(obj, font, size, style, r, g, b, sr, sg, sb, sox, soy)
-	if not obj then return end -- TODO: prune things that don't exist anymore
+	if not obj then return end
 	obj:SetFont(font, floor(size * PhanxFontDB.scale + 0.5), style)
 	if sr and sg and sb then
 		obj:SetShadowColor(sr, sg, sb)
@@ -156,7 +159,7 @@ function Addon:SetFonts(event, addon)
 	FCF_SetChatWindowFontSize(nil, ChatFrame1, size)
 
 	-- CombatTextFont scale
-	C_CVar.SetCVar("WorldTextScale", PhanxFontDB.damagescale)
+	SetCVar("WorldTextScale", PhanxFontDB.damagescale)
 
 	-- Fix for adventure journal
 	if addon == "Blizzard_EncounterJournal" then
@@ -164,7 +167,9 @@ function Addon:SetFonts(event, addon)
 	end
 
 	-- WorldMap Bounty board
-	SetFont(WorldMapFrame.overlayFrames[4].BountyName, NORMAL, 16, "OUTLINE", nil, nil, nil, 0, 0, 0, 1, -1)
+	if WorldMapFrame.overlayFrames then
+		SetFont(WorldMapFrame.overlayFrames[4].BountyName, NORMAL, 16, "OUTLINE", nil, nil, nil, 0, 0, 0, 1, -1)
+	end
 end
 
 ------------------------------------------------------------------------
@@ -177,15 +182,17 @@ f:SetScript("OnEvent", function(self, event, addon)
 
 	Addon:SetFonts(event, addon)
 
-	for _, button in pairs(PaperDollTitlesPane.buttons) do
-		button.text:SetFontObject(GameFontHighlightSmallLeft)
+	if not Addon.Classic then
+		for _, button in pairs(PaperDollTitlesPane.buttons) do
+			button.text:SetFontObject(GameFontHighlightSmallLeft)
+		end
+
+		BattlePetTooltip.Name:SetFontObject(GameTooltipHeaderText)
+		FloatingBattlePetTooltip.Name:SetFontObject(GameTooltipHeaderText)
+
+		LFGListFrame.CategorySelection.CategoryButtons[1].Label:SetFontObject(GameFontNormal)
+		WorldMapFrameHomeButtonText:SetFontObject(GameFontNormal)
 	end
-
-	BattlePetTooltip.Name:SetFontObject(GameTooltipHeaderText)
-	FloatingBattlePetTooltip.Name:SetFontObject(GameTooltipHeaderText)
-
-	LFGListFrame.CategorySelection.CategoryButtons[1].Label:SetFontObject(GameFontNormal)
-	WorldMapFrameHomeButtonText:SetFontObject(GameFontNormal)
 end)
 
 hooksecurefunc("FCF_SetChatWindowFontSize", function(self, frame, size)
@@ -216,10 +223,12 @@ hooksecurefunc("FCF_SetChatWindowFontSize", function(self, frame, size)
 	end
 end)
 
-hooksecurefunc("BattlePetToolTip_Show", function()
-	BattlePetTooltip:SetHeight(BattlePetTooltip:GetHeight() + 12)
-end)
+if not Addon.Classic then
+	hooksecurefunc("BattlePetToolTip_Show", function()
+		BattlePetTooltip:SetHeight(BattlePetTooltip:GetHeight() + 12)
+	end)
 
-hooksecurefunc("FloatingBattlePet_Show", function()
-	FloatingBattlePetTooltip:SetHeight(FloatingBattlePetTooltip:GetHeight() + 12)
-end)
+	hooksecurefunc("FloatingBattlePet_Show", function()
+		FloatingBattlePetTooltip:SetHeight(FloatingBattlePetTooltip:GetHeight() + 12)
+	end)
+end
