@@ -1,11 +1,2 @@
-**80000.0**
-
-- Updated for WoW 8.0
-
-**70300.1**
-
-- Fixed config panel errors
-
-**70300.0**
-
-- Initial release
+### Changed in 9.0.5-1
+- First release
