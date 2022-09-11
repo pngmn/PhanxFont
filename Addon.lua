@@ -158,6 +158,10 @@ function Addon:SetFonts(event, addon)
 	-- CombatTextFont scale
 	C_CVar.SetCVar("WorldTextScale", PhanxFontDB.damagescale)
 
+	-- Fix for adventure journal
+	if addon == "Blizzard_EncounterJournal" then
+		SetFont(EncounterJournalSuggestFrame.Suggestion1.centerDisplay.description.text, NORMAL, 15)
+	end
 end
 
 ------------------------------------------------------------------------
@@ -168,7 +172,7 @@ f:SetScript("OnEvent", function(self, event, addon)
 	UIDROPDOWNMENU_DEFAULT_TEXT_HEIGHT = 14
 	CHAT_FONT_HEIGHTS = { 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24 }
 
-	Addon:SetFonts()
+	Addon:SetFonts(event, addon)
 
 	for _, button in pairs(PaperDollTitlesPane.buttons) do
 		button.text:SetFontObject(GameFontHighlightSmallLeft)
