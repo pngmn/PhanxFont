@@ -14,7 +14,7 @@ _G.PhanxFont = Addon
 
 Addon.Classic = WOW_PROJECT_ID == WOW_PROJECT_CLASSIC
 Addon.BCC = WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC
-Addon.Mainline = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
+Addon.Retail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
 
 PhanxFontDB = {
 	normal = "Lato",
@@ -55,7 +55,7 @@ end
 function Addon:SetFonts(event, addon)
 	NORMAL     = LibStub("LibSharedMedia-3.0"):Fetch("font", PhanxFontDB.normal)
 	BOLD       = LibStub("LibSharedMedia-3.0"):Fetch("font", PhanxFontDB.bold)
-	DAMAGE 	   = LibStub("LibSharedMedia-3.0"):Fetch("font", PhanxFontDB.damage)
+	DAMAGE     = LibStub("LibSharedMedia-3.0"):Fetch("font", PhanxFontDB.damage)
 	BOLDITALIC = BOLD
 	ITALIC     = NORMAL
 	NUMBER     = BOLD
@@ -177,6 +177,14 @@ function Addon:SetFonts(event, addon)
 	if WorldMapFrame.overlayFrames then
 		self:SetFont(WorldMapFrame.overlayFrames[4].BountyName, NORMAL, 16, "OUTLINE", nil, nil, nil, 0, 0, 0, 1, -1)
 	end
+
+	if Addon.Retail then
+		-- There is something wonky with the Blizzard template, so we have to manually style them.
+		self:SetFont(LFGListFrame.ApplicationViewer.NameColumnHeader.Label, NORMAL, 12)
+		self:SetFont(LFGListFrame.ApplicationViewer.RoleColumnHeader.Label, NORMAL, 12)
+		self:SetFont(LFGListFrame.ApplicationViewer.ItemLevelColumnHeader.Label, NORMAL, 12)
+		self:SetFont(LFGApplicationViewerRatingColumnHeader.Label, NORMAL, 12) -- Blizz?!
+	end
 end
 
 ------------------------------------------------------------------------
@@ -189,7 +197,7 @@ f:SetScript("OnEvent", function(self, event, addon)
 
 	Addon:SetFonts(event, addon)
 
-	if Addon.Mainline then
+	if Addon.Retail then
 		for _, button in pairs(PaperDollTitlesPane.buttons) do
 			button.text:SetFontObject(GameFontHighlightSmallLeft)
 		end
@@ -230,7 +238,7 @@ hooksecurefunc("FCF_SetChatWindowFontSize", function(self, frame, size)
 	end
 end)
 
-if Addon.Mainline then
+if Addon.Retail then
 	hooksecurefunc("BattlePetToolTip_Show", function()
 		BattlePetTooltip:SetHeight(BattlePetTooltip:GetHeight() + 12)
 	end)
