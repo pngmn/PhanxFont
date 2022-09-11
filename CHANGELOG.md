@@ -1,3 +1,6 @@
+### Changed in 9.0.5-2
+- Fixed damage font not changing
+
 ### Changed in 9.0.5-1
 - First release of this fork
 - Updated for Shadowlands Patch 9.0.5
