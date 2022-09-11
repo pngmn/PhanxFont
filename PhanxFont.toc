@@ -1,6 +1,6 @@
-## Interface: 90205
-## Interface-BCC: 20503
-## Interface-Classic: 11402
+## Interface: 90207
+## Interface-Wrath: 30400
+## Interface-Classic: 11403
 ## Version: @project-version@
 
 ## Title: PhanxFont
@@ -8,8 +8,8 @@
 ## Notes-deDE: Einfacher Schriftenersatz.
 ## Notes-esES: Sustitución de fuentes simple.
 ## Notes-esMX: Sustitución de fuentes simple.
+## Author: Pingumania, Phanx
 
-## Author: pngmn
 ## SavedVariables: PhanxFontDB
 
 Libs\LibStub\LibStub.lua
