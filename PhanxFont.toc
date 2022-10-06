@@ -11,10 +11,11 @@
 ## Author: Pingumania, Phanx
 
 ## SavedVariables: PhanxFontDB
-
-Libs\LibStub\LibStub.lua
-Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
-Libs\LibSharedMedia-3.0\LibSharedMedia-3.0.lua
+#@non-debug@
+#Libs\LibStub\LibStub.lua
+#Libs\CallbackHandler-1.0\CallbackHandler-1.0.lua
+#Libs\LibSharedMedia-3.0\LibSharedMedia-3.0.lua
+#@end-non-debug@
 Libs\PhanxConfig-Dropdown\PhanxConfig-Dropdown.lua
 Libs\PhanxConfig-MediaDropdown\PhanxConfig-MediaDropdown.lua
 Libs\PhanxConfig-Slider\PhanxConfig-Slider.lua

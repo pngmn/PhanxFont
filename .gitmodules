@@ -1,0 +1,9 @@
+[submodule "Libs/PhanxConfig-Slider"]
+	path = Libs/PhanxConfig-Slider
+	url = https://github.com/Pingumania/PhanxConfig-Slider.git
+[submodule "Libs/PhanxConfig-MediaDropdown"]
+	path = Libs/PhanxConfig-MediaDropdown
+	url = https://github.com/phanx-wow/PhanxConfig-MediaDropdown.git
+[submodule "Libs/PhanxConfig-Dropdown"]
+	path = Libs/PhanxConfig-Dropdown
+	url = https://github.com/Pingumania/PhanxConfig-Dropdown.git
