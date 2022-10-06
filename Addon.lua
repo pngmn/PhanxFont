@@ -38,7 +38,7 @@ function Addon:SetFont(obj, font, size, style, r, g, b, sr, sg, sb, sox, soy)
 	if not size then
 		size = select(2, obj:GetFont())
 	end
-	obj:SetFont(font, floor(size * PhanxFontDB.scale + 0.5), style)
+	obj:SetFont(font, floor(size * PhanxFontDB.scale + 0.5), style or "")
 	if sr and sg and sb then
 		obj:SetShadowColor(sr, sg, sb)
 	end
@@ -88,7 +88,7 @@ function Addon:SetFonts(event, addon)
 	self:SetFont(MailFont_Large,                     ITALIC, 15, nil, 0.15, 0.09, 0.04, 0.54, 0.4, 0.1, 1, -1)
 	self:SetFont(NumberFont_GameNormal,              NORMAL, 10)
 	self:SetFont(NumberFont_Normal_Med,              NUMBER, 14)
-	self:SetFont(NumberFont_Outline_Huge,            NUMBER, 30, "THICKOUTLINE", 30)
+	self:SetFont(NumberFont_Outline_Huge,            NUMBER, 30, "THICKOUTLINE")
 	self:SetFont(NumberFont_Outline_Large,           NUMBER, 17, "OUTLINE")
 	self:SetFont(NumberFont_Outline_Med,             NUMBER, 15, "OUTLINE")
 	self:SetFont(NumberFont_OutlineThick_Mono_Small, NUMBER, 13, "OUTLINE")
@@ -150,9 +150,9 @@ function Addon:SetFonts(event, addon)
 	-- Derived fonts in FontStyles.xml
 	self:SetFont(BossEmoteNormalHuge,  BOLDITALIC, 27, "THICKOUTLINE") -- inherits SystemFont_Shadow_Huge3
 	self:SetFont(CombatTextFont,           DAMAGE, 26) -- inherits SystemFont_Shadow_Huge3
-	self:SetFont(ErrorFont,                ITALIC, 16, nil, 60) -- inherits GameFontNormalLarge
+	self:SetFont(ErrorFont,                ITALIC, 16) -- inherits GameFontNormalLarge
 	self:SetFont(QuestFontNormalSmall,       BOLD, 13, nil, nil, nil, nil, 0.54, 0.4, 0.1) -- inherits GameFontBlack
-	self:SetFont(WorldMapTextFont,     BOLDITALIC, 31, "THICKOUTLINE", 40, nil, nil, 0, 0, 0, 1, -1) -- inherits SystemFont_OutlineThick_WTF
+	self:SetFont(WorldMapTextFont,     BOLDITALIC, 31, "THICKOUTLINE", nil, nil, nil, 0, 0, 0, 1, -1) -- inherits SystemFont_OutlineThick_WTF
 
 	--[[ Fancy stuff!
 	self:SetFont(ZoneTextFont,           BOLD, 31, "THICKOUTLINE") -- inherits SystemFont_OutlineThick_WTF
@@ -197,7 +197,7 @@ f:SetScript("OnEvent", function(self, event, addon)
 
 	Addon:SetFonts(event, addon)
 
-	if Addon.Retail then
+	if PaperDollTitlesPane then
 		for _, button in pairs(PaperDollTitlesPane.buttons) do
 			button.text:SetFontObject(GameFontHighlightSmallLeft)
 		end
@@ -222,7 +222,7 @@ hooksecurefunc("FCF_SetChatWindowFontSize", function(self, frame, size)
 	for i = 1, 10 do
 		local f = _G["ChatFrame"..i]
 		if f then
-			f:SetFont(NORMAL, size)
+			f:SetFont(NORMAL, size, "")
 			SetChatWindowSize(i, size)
 		end
 	end
