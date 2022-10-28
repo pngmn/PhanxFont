@@ -1,3 +1,10 @@
+PhanxFont | 1.4.0
+-----------------
+- ToC update for 10.0.0
+- ToC update for 3.4.0
+- ToC update for 1.14.3
+- Fixed for Dragonflight
+
 PhanxFont | 1.3.0
 -----------------
 - ToC update for 9.2.0
