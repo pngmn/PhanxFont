@@ -12,8 +12,6 @@
 local ADDON, Addon = ...
 _G.PhanxFont = Addon
 
-Addon.Classic = WOW_PROJECT_ID == WOW_PROJECT_CLASSIC
-Addon.BCC = WOW_PROJECT_ID == WOW_PROJECT_BURNING_CRUSADE_CLASSIC
 Addon.Retail = WOW_PROJECT_ID == WOW_PROJECT_MAINLINE
 
 PhanxFontDB = {
