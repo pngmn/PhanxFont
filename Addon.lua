@@ -199,13 +199,13 @@ f:SetScript("OnEvent", function(self, event, addon)
 		for _, button in pairs(PaperDollTitlesPane.buttons) do
 			button.text:SetFontObject(GameFontHighlightSmallLeft)
 		end
-
-		BattlePetTooltip.Name:SetFontObject(GameTooltipHeaderText)
-		FloatingBattlePetTooltip.Name:SetFontObject(GameTooltipHeaderText)
-
-		LFGListFrame.CategorySelection.CategoryButtons[1].Label:SetFontObject(GameFontNormal)
-		WorldMapFrameHomeButtonText:SetFontObject(GameFontNormal)
 	end
+
+	BattlePetTooltip.Name:SetFontObject(GameTooltipHeaderText)
+	FloatingBattlePetTooltip.Name:SetFontObject(GameTooltipHeaderText)
+
+	LFGListFrame.CategorySelection.CategoryButtons[1].Label:SetFontObject(GameFontNormal)
+	WorldMapFrameHomeButtonText:SetFontObject(GameFontNormal)
 end)
 
 hooksecurefunc("FCF_SetChatWindowFontSize", function(self, frame, size)
