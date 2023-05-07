@@ -1,3 +1,8 @@
+PhanxFont | 1.5
+---------------
+- ToC update for 10.1.0
+- ToC update for 3.4.1
+
 PhanxFont | 1.4.0
 -----------------
 - ToC update for 10.0.0
