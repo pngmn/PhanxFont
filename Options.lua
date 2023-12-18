@@ -225,7 +225,7 @@ Options:SetScript("OnShow", function(self)
 			fs:SetPoint("TOPLEFT", fonts[i-1], "BOTTOMLEFT", 0, -5)
 		end
 		fs:SetFontObject(font)
-		fs:SetText(font)
+		fs:SetText(font == "CombatTextFont" and "86.337" or font)
 		fs.font = font
 		fonts[i] = fs
 	end

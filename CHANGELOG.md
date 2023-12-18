@@ -1,3 +1,9 @@
+PhanxFont | 1.6
+---------------
+- ToC update for 10.2.0
+- Adjusted ErrorFont size
+- Show numbers for damage font preview
+
 PhanxFont | 1.5
 ---------------
 - ToC update for 10.1.0
