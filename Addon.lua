@@ -148,11 +148,11 @@ function Addon:SetFonts(event, addon)
 	self:SetFont(Tooltip_Small,                        BOLD, 12)
 
 	-- Derived fonts in FontStyles.xml
-	self:SetFont(BossEmoteNormalHuge,  BOLDITALIC, 27, "THICKOUTLINE") -- inherits SystemFont_Shadow_Huge3
-	self:SetFont(CombatTextFont,           DAMAGE, 26) -- inherits SystemFont_Shadow_Huge3
-	self:SetFont(ErrorFont,                ITALIC, 16) -- inherits GameFontNormalLarge
-	self:SetFont(QuestFontNormalSmall,       BOLD, 13, nil, nil, nil, nil, 0.54, 0.4, 0.1) -- inherits GameFontBlack
-	self:SetFont(WorldMapTextFont,     BOLDITALIC, 31, "THICKOUTLINE", nil, nil, nil, 0, 0, 0, 1, -1) -- inherits SystemFont_OutlineThick_WTF
+	self:SetFont(BossEmoteNormalHuge,  			 BOLDITALIC, 27, "THICKOUTLINE") -- inherits SystemFont_Shadow_Huge3
+	self:SetFont(CombatTextFont,           		     DAMAGE, 26) -- inherits SystemFont_Shadow_Huge3
+	self:SetFont(ErrorFont,               		 BOLDITALIC, 31, "OUTLINE", nil, nil, nil, 0, 0, 0, 1, -1) -- inherits GameFontNormalLarge
+	self:SetFont(QuestFontNormalSmall,       	       BOLD, 13, nil, nil, nil, nil, 0.54, 0.4, 0.1) -- inherits GameFontBlack
+	self:SetFont(WorldMapTextFont,     			 BOLDITALIC, 31, "THICKOUTLINE", nil, nil, nil, 0, 0, 0, 1, -1) -- inherits SystemFont_OutlineThick_WTF
 
 	--[[ Fancy stuff!
 	self:SetFont(ZoneTextFont,           BOLD, 31, "THICKOUTLINE") -- inherits SystemFont_OutlineThick_WTF
