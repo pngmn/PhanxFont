@@ -131,7 +131,7 @@ Options:SetScript("OnShow", function(self)
 	SampleText:SetPoint("TOPRIGHT", DamageScale, "BOTTOMRIGHT", 0, -16)
 	SampleText:SetPoint("BOTTOMLEFT", ReloadButton, "TOPLEFT", 0, 16)
 	SampleText:SetJustifyH("LEFT")
-	SampleText:SetText("The quick brown fox jumps over the lazy dog.\n\nÁá Ää Éé Íí Ññ Óó Öö ß Úú Üü\n¡! ¿? # $ € % & ° – —\n“q” ‘q’ „q“ ‚q‘ «q» ‹q› ^ ● \n信 Б Д Ф Э")
+	SampleText:SetText("The quick brown fox jumps over the lazy dog.\nБыстрая коричневая лиса перепрыгивает через ленивую собаку.\n敏捷的棕狐狸跳过了懒惰的狗。\n1 2 3 4 5 6 7 8 9 0\nÁá Ää Éé Íí Ññ Óó Öö ß Úú Üü\n¡! ¿? # $ € % & ° – — ●")
 
 	----------
 
