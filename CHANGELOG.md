@@ -1,3 +1,7 @@
+PhanxFont | 1.7
+---------------
+- Update for patch 11.0.0
+
 PhanxFont | 1.6
 ---------------
 - ToC update for 10.2.0

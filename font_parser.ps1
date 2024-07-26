@@ -1,6 +1,6 @@
 $urls = @(
-    "https://raw.githubusercontent.com/Gethe/wow-ui-source/live/Interface/SharedXML/SharedFonts.xml",
-    "https://raw.githubusercontent.com/Gethe/wow-ui-source/live/Interface/FrameXML/Fonts.xml"
+    "https://raw.githubusercontent.com/Gethe/wow-ui-source/live/Interface/AddOns/Blizzard_Fonts_Shared/SharedFonts.xml",
+    "https://raw.githubusercontent.com/Gethe/wow-ui-source/live/Interface/AddOns/Blizzard_Fonts_Frame/Mainline/Fonts.xml"
 )
 
 $maxLength = 42
@@ -37,9 +37,9 @@ foreach ($url in $urls)
             Default {$style = ""}
         }
         $color = $romanMember.SelectSingleNode("./ns:Color", $ns)
-        $colorR = 0
-        $colorG = 0
-        $colorB = 0
+        $colorR = "nil"
+        $colorG = "nil"
+        $colorB = "nil"
         if ($color)
         {
             $colorR = $color.GetAttribute("r")
@@ -47,17 +47,17 @@ foreach ($url in $urls)
             $colorB = $color.GetAttribute("b")
         }
         $shadowOffset = $romanMember.SelectSingleNode("./ns:Shadow/ns:Offset/ns:AbsDimension", $ns)
-        $shadowOffsetX = 0
-        $shadowOffsetY = 0
+        $shadowOffsetX = "nil"
+        $shadowOffsetY = "nil"
         if ($shadowOffset)
         {
             $shadowOffsetX = $shadowOffset.GetAttribute("x")
             $shadowOffsetY = $shadowOffset.GetAttribute("y")
         }
         $shadowColor = $romanMember.SelectSingleNode("./ns:Shadow/ns:Color", $ns)
-        $shadowColorR = 0
-        $shadowColorG = 0
-        $shadowColorB = 0
+        $shadowColorR = "nil"
+        $shadowColorG = "nil"
+        $shadowColorB = "nil"
         if ($shadowColor)
         {
             $shadowColorR = $shadowColor.GetAttribute("r")

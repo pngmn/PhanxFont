@@ -262,11 +262,20 @@ Options:SetScript("OnShow", function(self)
 	self:refresh()
 end)
 
-InterfaceOptions_AddCategory(Options)
+if InterfaceOptions_AddCategory then
+	InterfaceOptions_AddCategory(Options)
+else
+	local category, layout = Settings.RegisterCanvasLayoutCategory(Options, Options.name)
+	Settings.RegisterAddOnCategory(category)
+	Options.settingsCategory = category
+end
 
 SLASH_PHANXFONT1 = "/font"
-SLASH_PHANXFONT2 = "/schrift"
 SlashCmdList.PHANXFONT = function()
-	InterfaceOptionsFrame_OpenToCategory(Options)
-	InterfaceOptionsFrame_OpenToCategory(Options)
+	if InterfaceOptionsFrame_OpenToCategory then
+		InterfaceOptionsFrame_OpenToCategory(Options)
+		InterfaceOptionsFrame_OpenToCategory(Options)
+	else
+		Settings.OpenToCategory(Options.settingsCategory.ID)
+	end
 end
