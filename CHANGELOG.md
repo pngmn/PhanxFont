@@ -1,3 +1,7 @@
+PhanxFont | 1.7.1
+-----------------
+- Update for patch 11.0.2
+
 PhanxFont | 1.7
 ---------------
 - Update for patch 11.0.0

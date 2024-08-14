@@ -37,7 +37,7 @@ elseif GetLocale():match("^es") then
 end
 
 local Options = CreateFrame("Frame", "PhanxFontOptions", InterfaceOptionsFramePanelContainer)
-Options.name = GetAddOnMetadata(ADDON, "Title") or ADDON
+Options.name = C_AddOns.GetAddOnMetadata(ADDON, "Title") or ADDON
 Options:Hide()
 
 Options:SetScript("OnShow", function(self)
@@ -51,7 +51,7 @@ Options:SetScript("OnShow", function(self)
 	Notes:SetHeight(32)
 	Notes:SetJustifyH("LEFT")
 	Notes:SetJustifyV("TOP")
-	Notes:SetText(GetAddOnMetadata(ADDON, "Notes"))
+	Notes:SetText(C_AddOns.GetAddOnMetadata(ADDON, "Notes"))
 
 	local UpdatePreviews, SampleText
 

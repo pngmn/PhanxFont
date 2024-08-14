@@ -1,6 +1,7 @@
 $urls = @(
     "https://raw.githubusercontent.com/Gethe/wow-ui-source/live/Interface/AddOns/Blizzard_Fonts_Shared/SharedFonts.xml",
-    "https://raw.githubusercontent.com/Gethe/wow-ui-source/live/Interface/AddOns/Blizzard_Fonts_Frame/Mainline/Fonts.xml"
+    "https://raw.githubusercontent.com/Gethe/wow-ui-source/live/Interface/AddOns/Blizzard_Fonts_Frame/Mainline/Fonts.xml",
+    "https://raw.githubusercontent.com/Gethe/wow-ui-source/live/Interface/AddOns/Blizzard_ObjectiveTracker/Blizzard_ObjectiveTrackerFonts.xml"
 )
 
 $maxLength = 42
